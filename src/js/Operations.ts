@@ -19,6 +19,26 @@ export default class Operations {
       numerator: 0,
       denominator: 0,
     };
+
+    if (num1 === 0 && denom1 === 0 && num2 === 0 && denom2 === 0) {
+      return restResult;
+    }
+
+    if (num1 === 0 && denom1 === 0) {
+      restResult = {
+        numerator: num2,
+        denominator: denom2,
+      };
+      return restResult;
+    }
+    if (num2 === 0 && denom2 === 0) {
+      restResult = {
+        numerator: num1,
+        denominator: denom1,
+      };
+      return restResult;
+    }
+
     if (denom1 === denom2) {
       const addNumerators = num1 + num2;
       restResult = {
@@ -30,12 +50,20 @@ export default class Operations {
       const commonDenom = denom1 * denom2;
       const numeratorResult =
         (commonDenom / denom1) * num1 + (commonDenom / denom2) * num2;
-      console.log("special calc...", commonDenom);
       restResult = {
         numerator: numeratorResult,
         denominator: commonDenom,
       };
     }
+
+    const gcd = Operations.greatestCommonDivisor(
+      restResult.numerator,
+      restResult.denominator
+    );
+
+    restResult.numerator /= gcd;
+    restResult.denominator /= gcd;
+
     return restResult;
   }
 
@@ -47,28 +75,23 @@ export default class Operations {
 
     let restString = "";
 
-    if (rest.numerator === rest.denominator) {
-      inches += 1;
-      rest.numerator = 0;
-      rest.denominator = 0;
-    } else {
-      if (rest.numerator > rest.denominator) {
-        console.log("olv");
-        const parte = rest.numerator / rest.denominator;
-        const entero = Math.trunc(parte);
-        const dec = parte - entero;
-        console.log({ parte });
-        console.log({ entero });
-        console.log({ dec });
-        inches += entero;
-        const r2 = entero / dec;
-        console.log({ r2 });
-        console.log(rest.numerator);
-        rest.numerator = Math.trunc(rest.numerator - rest.denominator);
-        if (dec > 0) {
+    if (rest.numerator !== 0 && rest.denominator !== 0) {
+      if (rest.numerator === rest.denominator) {
+        inches += 1;
+        rest.numerator = 0;
+        rest.denominator = 0;
+      } else {
+        if (rest.numerator > rest.denominator) {
+          const parte = rest.numerator / rest.denominator;
+          const entero = Math.trunc(parte);
+          inches += entero;
+          rest.numerator = rest.numerator - rest.denominator;
+        }
+
+        if (rest.numerator > 0) {
+          restString = `${rest.numerator}/${rest.denominator} `;
         }
       }
-      restString = `${rest.numerator}/${rest.denominator} `;
     }
 
     while (inches >= 12) {
@@ -78,5 +101,21 @@ export default class Operations {
 
     result += `${feets} ft ${inches} ${restString}in`;
     return result;
+  }
+
+  static greatestCommonDivisor(a: number, b: number) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    if (b > a) {
+      var temp = a;
+      a = b;
+      b = temp;
+    }
+    while (true) {
+      if (b == 0) return a;
+      a %= b;
+      if (a == 0) return b;
+      b %= a;
+    }
   }
 }

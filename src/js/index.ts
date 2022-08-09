@@ -3,8 +3,8 @@ import "./../scss/styles.scss";
 import Calculable from "./Calculable";
 import Operations from "./Operations";
 
-const calculable1 = new Calculable(27, 9, { numerator: 3, denominator: 7 });
-const calculable2 = new Calculable(48, 8, { numerator: 10, denominator: 16 });
+const calculable1 = new Calculable(3, 6, { numerator: 0, denominator: 0 });
+const calculable2 = new Calculable(5, 7, { numerator: 1, denominator: 2 });
 console.log(calculable1);
 console.log(calculable2);
 

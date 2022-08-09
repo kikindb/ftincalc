@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+/// <reference types="vite/client" />
 
 const path = require("path");
 export default {
@@ -11,5 +12,9 @@ export default {
   server: {
     port: 5000,
     hot: true,
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
   },
 };
