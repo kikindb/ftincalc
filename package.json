@@ -1,0 +1,28 @@
+{
+  "name": "ftincalc",
+  "version": "1.0.0",
+  "description": "Calculator of feet inches",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "vite",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "feet",
+    "inches",
+    "calculator"
+  ],
+  "author": "Enrique Dick",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "sass": "^1.54.3",
+    "vite": "^3.0.4",
+    "vitest": "^0.21.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.5",
+    "bootstrap": "^5.2.0"
+  }
+}
