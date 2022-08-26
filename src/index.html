@@ -11,35 +11,114 @@
     <div class="container">
       <header><h1>Feet Inches Calculator</h1></header>
       <div class="calc-container">
-        <div class="calc-item">
-          <div class="mb-3">
-            <label for="feetInput1" class="form-label">Ft</label>
-            <input
-              type="number"
-              class="form-control"
-              id="feetInput1"
-              placeholder="0"
-              step="1"
-            />
+        <div class="row g-2 calc-item">
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="feetInput1"
+                placeholder="0"
+                step="1"
+              />
+              <label for="feetInput1" class="form-label">Ft</label>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="inchesInput1" class="form-label">In</label>
-            <input
-              type="number"
-              class="form-control"
-              id="inchesInput1"
-              placeholder="0"
-              step="1"
-            />
+
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="inchesInput1"
+                placeholder="0"
+                step="1"
+              />
+              <label for="inchesInput1" class="form-label">In</label>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="restInput1" class="form-label">Rest</label>
-            <input
-              type="text"
-              class="form-control"
-              id="restInput1"
-              placeholder="1/2"
-            />
+
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="restInput1"
+                placeholder="1/2"
+              />
+              <label for="restInput1" class="form-label">Rest</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2 calc-item">
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="feetInput2"
+                placeholder="0"
+                step="1"
+              />
+              <label for="feetInput2" class="form-label">Ft</label>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input
+                type="number"
+                class="form-control"
+                id="inchesInput2"
+                placeholder="0"
+                step="1"
+              />
+              <label for="inchesInput1" class="form-label">In</label>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="restInput2"
+                placeholder="1/2"
+              />
+              <label for="restInput2" class="form-label">Rest</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="input-group">
+            <select
+              class="form-select"
+              id="inputGroupSelect04"
+              aria-label="Example select with button addon"
+            >
+              <option selected>Addition</option>
+            </select>
+
+            <button id="calculateBtn" class="btn btn-primary" type="button">
+              Calculate
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="answerInput"
+                value="0 ft 0 in"
+                readonly
+              />
+              <label for="answerInput" class="form-label">Answer:</label>
+            </div>
           </div>
         </div>
       </div>

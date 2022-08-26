@@ -1,8 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
+import { defineConfig } from "vite";
+
 const path = require("path");
-export default {
+export default defineConfig({
   root: path.resolve(__dirname, "src"),
   resolve: {
     alias: {
@@ -17,4 +19,4 @@ export default {
     globals: true,
     environment: "jsdom",
   },
-};
+});

@@ -5,8 +5,19 @@ export default class Operations {
     const result = calculable1.getFeets() + calculable2.getFeets();
     return result;
   }
+
+  static subtractFeets(calculable1: Calculable, calculable2: Calculable) {
+    const result = calculable1.getFeets() - calculable2.getFeets();
+    return result;
+  }
+
   static addInches(calculable1: Calculable, calculable2: Calculable) {
     const result = calculable1.getInches() + calculable2.getInches();
+    return result;
+  }
+
+  static subtractInches(calculable1: Calculable, calculable2: Calculable) {
+    const result = calculable1.getInches() - calculable2.getInches();
     return result;
   }
 
